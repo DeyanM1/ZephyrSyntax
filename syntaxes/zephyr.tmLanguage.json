@@ -1,0 +1,64 @@
+{
+  "scopeName": "source.zephyr",
+  "name": "Zephyr",
+  "patterns": [
+    {
+      "name": "meta.zephyr.statement.hash",
+      "begin": "(\\w+)\\s*(#)",
+      "beginCaptures": {
+        "1": { "name": "zephyr.variable.name.define" },
+        "2": { "name": "zephyr.variable.base.define" }
+      },
+      "end": ";",
+      "patterns": [
+        {
+          "match": "\\b(INT|FLOAT|PT|\\__|LIST|MO|FUNC|CO|IF|LOOP|RNG|PredefVar|LIB):",
+          "captures": {
+            "1": { "name": "zephyr.variable.function.define.type" }
+          }
+        },
+        {
+          "match": "\\b(?!\\.)(\\w+):",
+          "captures": {
+            "1": { "name": "zephyr.variable.function.define.normal" }
+          }
+        },
+        {
+          "match": "(?<=[:\\|])([^;|]+)",
+          "captures": {
+            "1": { "name": "zephyr.variable.parameters" }
+          }
+        }
+      ]
+    },
+    {
+      "name": "meta.zephyr.statement.question",
+      "begin": "(\\w+)\\s*(\\?)",
+      "beginCaptures": {
+        "1": { "name": "zephyr.variable.name.use" },
+        "2": { "name": "zephyr.variable.base.use" }
+      },
+      "end": ";",
+      "patterns": [
+        {
+          "match": "\\b(?!\\.)(\\w+):",
+          "captures": {
+            "1": { "name": "zephyr.variable.function.define.normal" }
+          }
+        },
+        {
+          "match": "\\b(INT|FLOAT|PT):",
+          "captures": {
+            "1": { "name": "zephyr.variable.function.define" }
+          }
+        },
+        {
+          "match": "(?<=[:\\|])([^;|]+)",
+          "captures": {
+            "1": { "name": "zephyr.variable.parameters" }
+          }
+        }
+      ]
+    }
+  ]
+}
