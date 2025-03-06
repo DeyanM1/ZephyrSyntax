@@ -193,11 +193,11 @@
       "settings": { "foreground": "#00FF00" }
     },
     {
-      "scope": "zephyr.variable.function.define.type",
+      "scope": "zephyr.variable.function.type",
       "settings": { "foreground": "#67ffe1" }
     },
     {
-      "scope": "zephyr.variable.function.define.normal",
+      "scope": "zephyr.variable.function.normal",
       "settings": { "foreground": "#ff00FF" }
     },
     {

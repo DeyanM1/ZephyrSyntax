@@ -14,13 +14,13 @@
         {
           "match": "\\b(INT|FLOAT|PT|\\__|LIST|MO|FUNC|CO|IF|LOOP|RNG|PredefVar|LIB):",
           "captures": {
-            "1": { "name": "zephyr.variable.function.define.type" }
+            "1": { "name": "zephyr.variable.function.type" }
           }
         },
         {
           "match": "\\b(?!\\.)(\\w+):",
           "captures": {
-            "1": { "name": "zephyr.variable.function.define.normal" }
+            "1": { "name": "zephyr.variable.function.normal" }
           }
         },
         {
@@ -41,17 +41,16 @@
       "end": ";",
       "patterns": [
         {
-          "match": "\\b(?!\\.)(\\w+):",
+          "match": "\\b(?!\\.)([\\w\\s\\(\\)']+):",
           "captures": {
-            "1": { "name": "zephyr.variable.function.define.normal" }
+            "1": { "name": "zephyr.variable.function.normal" }
           }
         },
         {
-          "match": "\\b(INT|FLOAT|PT):",
-          "captures": {
-            "1": { "name": "zephyr.variable.function.define" }
-          }
+          "match": "[\\(']",
+          "name": "zephyr.variable.function.normal"
         },
+
         {
           "match": "(?<=[:\\|])([^;|]+)",
           "captures": {
