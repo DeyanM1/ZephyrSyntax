@@ -1,14 +1,27 @@
 {
   "name": "zephyrsyntax",
   "displayName": "zephyrSyntax",
-  "description": "",
-  "version": "0.0.1",
+  "description": "Provides syntax highlighting for the Zephyr programming language, enhancing the coding experience in Visual Studio Code with clear and visually distinct syntax for Zephyr keywords, operators, and more.",
+  "publisher": "DeyanM1",
+  "version": "1.0.0",
+  "icon": "images/icon.png",
+  "homepage": "https://github.com/DeyanM1/Zephyr",
+
   "engines": {
     "vscode": "^1.97.0"
   },
   "categories": [
-    "Programming Languages"
+    "Programming Languages",
+    "Language Packs"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DeyanM1/ZephyrSyntax"
+  },
+
+
+
+
   "contributes": {
   "languages": [
     {
