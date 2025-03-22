@@ -6,7 +6,6 @@
   "version": "1.0.0",
   "icon": "images/icon.png",
   "homepage": "https://github.com/DeyanM1/Zephyr",
-
   "engines": {
     "vscode": "^1.97.0"
   },
@@ -18,33 +17,49 @@
     "type": "git",
     "url": "https://github.com/DeyanM1/ZephyrSyntax"
   },
-
-
-
-
   "contributes": {
-  "languages": [
-    {
-      "id": "zephyr",
-      "aliases": ["Zephyr"],
-      "extensions": [".zph"],
-      "configuration": "./language-configuration.json"
-    }
+    "languages": [
+      {
+        "id": "zephyr",
+        "aliases": [
+          "Zephyr"
+        ],
+        "extensions": [
+          ".zph"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "zephyr",
+        "scopeName": "source.zephyr",
+        "path": "./syntaxes/zephyr.tmLanguage.json"
+      }
+    ],
+    "themes": [
+      {
+        "id": "Zephyr Theme",
+        "label": "Zephyr Language Theme",
+        "uiTheme": "vs-dark",
+        "path": "./themes/color.json"
+      }
+    ],
+    "commands": [
+      {
+        "command": "myExtension.doAction",
+        "title": "Do Action"
+      }
+    ]
+  },
+  "activationEvents": [
+    "*"
   ],
-  "grammars": [
-    {
-      "language": "zephyr",
-      "scopeName": "source.zephyr",
-      "path": "./syntaxes/zephyr.tmLanguage.json"
-    }
-  ],
-  "themes": [
-    {
-      "id": "Zephyr Theme",
-      "label": "Zephyr Language Theme",
-      "uiTheme": "vs-dark",
-      "path": "./themes/color.json"
-    }
-  ]
-}
+  "scripts": {
+    "compile": "tsc -p ./"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.98.0",
+    "typescript": "^5.8.2"
+  }
 }
